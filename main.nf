@@ -1,3 +1,5 @@
+params.test_parameters.greeting = "default"
+
 process sayHello {
     publishDir 'out', mode: 'move'
 
