@@ -10,9 +10,9 @@
       "type": "object",
       "fa_icon": "fas fa-terminal",
       "description": "Some example test parameters",
-      "required": ["param1"],
+      "required": ["greeting"],
       "properties": {
-        "param1": {
+        "greeting": {
           "type": "string"
         }
       }
