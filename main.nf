@@ -5,12 +5,12 @@ process sayHello {
         val name
 
     output:
-        path "hello.txt"
+        path "hello_${name}.txt"
 
     debug true
     script:
     """
-    echo "Hello, ${name}!" > hello.txt
+    echo "Hello, ${name}!" > "hello_${name}.txt"
     """
 }
 
