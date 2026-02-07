@@ -1,5 +1,5 @@
 
-param.greeting = "test"
+params.test_parameters.greeting = "test"
 
 process sayHello {
 
@@ -11,7 +11,8 @@ process sayHello {
   echo 'Hello $greeting !!!'
   """
 }
+
 workflow {
-  greeting_ch = Channel.of(params.greeting)
+  greeting_ch = Channel.of(params.test_parameters.greeting)
   sayHello(greeting_ch)
 }
