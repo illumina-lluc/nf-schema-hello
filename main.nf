@@ -1,5 +1,5 @@
 
-params.test_parameters.greeting = "test"
+params.greeting = "test"
 
 process sayHello {
 
@@ -13,6 +13,6 @@ process sayHello {
 }
 
 workflow {
-  greeting_ch = Channel.of(params.test_parameters.greeting)
+  greeting_ch = Channel.of(params.greeting)
   sayHello(greeting_ch)
 }
