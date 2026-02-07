@@ -1,18 +1,20 @@
-
-params.greeting = "test"
-
 process sayHello {
+    publishDir 'out', mode: 'move'
 
-  input:
-      val greeting
+    input:
+        val name
 
-  script:
-  """
-  echo 'Hello $greeting !!!'
-  """
+    output:
+        path "hello.txt"
+
+    debug true
+    script:
+    """
+    echo "Hello, ${name}!" > hello.txt
+    """
 }
 
 workflow {
-  greeting_ch = Channel.of(params.greeting)
-  sayHello(greeting_ch)
+    greeting_ch = Channel.of(params.test_parameters.greeting)
+    sayHello(params.test_parameters.greeting)
 }
