@@ -1,4 +1,4 @@
-params.test_parameters.greeting = "default"
+params.greeting = "default"
 
 process sayHello {
     publishDir 'out', mode: 'move'
@@ -17,6 +17,6 @@ process sayHello {
 }
 
 workflow {
-    greeting_ch = Channel.of(params.test_parameters.greeting)
-    sayHello(params.test_parameters.greeting)
+    greeting_ch = Channel.of(params.greeting)
+    sayHello(params.greeting)
 }
