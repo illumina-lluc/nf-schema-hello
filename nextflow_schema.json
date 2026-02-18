@@ -10,10 +10,18 @@
       "type": "object",
       "fa_icon": "fas fa-terminal",
       "description": "Some example test parameters",
-      "required": ["greeting"],
+      "required": ["param1", "param2"],
       "properties": {
-        "greeting": {
+        "param1": {
           "type": "string"
+        },
+        "param2": {
+          "type": "integer"
+        }
+        ,
+        "param3": {
+          "type": ["boolean", "string"],
+          "description": "Display the help message."
         }
       }
     }
