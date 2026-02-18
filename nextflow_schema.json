@@ -20,7 +20,7 @@
         }
         ,
         "param3": {
-          "type": ["boolean", "string"],
+          "type": ["boolean", "foobar"],
           "description": "Display the help message."
         }
       }
