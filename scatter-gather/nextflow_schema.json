@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/illumina-lluc/nf-schema-hello/scatter-gather/nextflow_schema.json",
+  "title": "illumina-lluc/nf-schema-hello/scatter-gather pipeline parameters",
+  "description": "this is a test",
+  "type": "object",
+  "$defs": {
+    "test_parameters": {
+      "title": "Test parameters",
+      "type": "object",
+      "fa_icon": "fas fa-terminal",
+      "description": "Some example test parameters",
+      "required": ["myinput"],
+      "properties": {
+        "myinput": {
+          "type": "string",
+          "format": "file-path",
+          "mimetype": "text/plain",
+          "description": "Path to text file."
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/$defs/test_parameters"
+    }
+  ]
+}
