@@ -1,0 +1,3 @@
+workflow {
+    print nextflow.version
+}
