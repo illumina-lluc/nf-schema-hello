@@ -1,16 +1,22 @@
-nextflow.enable.dsl = 2
+params.greeting = "default"
 
-process SAY_HELLO {
+process sayHello {
+    publishDir 'out', mode: 'move'
 
-  output:
-    path "message.txt"
+    input:
+        val name
 
-  script:
-  """
-  echo "Hello, world!" > message.txt
-  """
+    output:
+        path "hello_${name}.txt"
+
+    debug true
+    script:
+    """
+    echo "Hello, ${name}!" > "hello_${name}.txt"
+    """
 }
 
 workflow {
-  SAY_HELLO()
+    greeting_ch = Channel.of(params.greeting)
+    sayHello(params.greeting)
 }
